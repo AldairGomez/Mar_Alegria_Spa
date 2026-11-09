@@ -69,12 +69,46 @@
   /* -------------------------------------------------------
      Idioma
      ------------------------------------------------------- */
-  const langSelects = $$('.js-lang');
+  const langSwitchers = $$('[data-lang-switcher]');
   const supportedLangs = I18N ? I18N.supported : ['es', 'en', 'pt'];
+  const langNames = { es: 'Español', en: 'English', pt: 'Português' };
+  let activeLangSwitcher = null;
 
-  const syncLangSelects = (lang) => {
-    langSelects.forEach((select) => {
-      select.value = lang;
+  const closeLangSwitcher = (switcher, restoreFocus = false) => {
+    if (!switcher) return;
+
+    const trigger = $('.lang-switcher__trigger', switcher);
+    switcher.classList.remove('is-open');
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+      if (activeLangSwitcher === switcher) activeLangSwitcher = null;
+      if (restoreFocus) trigger.focus();
+    } else if (activeLangSwitcher === switcher) {
+      activeLangSwitcher = null;
+    }
+  };
+
+  const closeLangSwitchers = (except = null) => {
+    langSwitchers.forEach((switcher) => {
+      if (switcher !== except) closeLangSwitcher(switcher);
+    });
+  };
+
+  const syncLangSwitchers = (lang) => {
+    langSwitchers.forEach((switcher) => {
+      const value = $('[data-lang-value]', switcher);
+      const trigger = $('.lang-switcher__trigger', switcher);
+      if (value) value.textContent = lang.toUpperCase();
+      if (trigger) {
+        const label = t('nav.language') || 'Idioma';
+        trigger.setAttribute('aria-label', `${label}: ${langNames[lang] || lang.toUpperCase()}`);
+      }
+
+      $$('.lang-switcher__option', switcher).forEach((option) => {
+        const isActive = option.dataset.lang === lang;
+        option.classList.toggle('is-active', isActive);
+        option.setAttribute('aria-checked', isActive ? 'true' : 'false');
+      });
     });
   };
 
@@ -98,14 +132,95 @@
     if (I18N) I18N.apply(code);
     else document.documentElement.lang = code;
 
-    syncLangSelects(code);
+    syncLangSwitchers(code);
     updateChromeLabels();
     refreshWhatsAppLinks();
     resetFormFeedback();
   };
 
-  langSelects.forEach((select) => {
-    select.addEventListener('change', () => setLanguage(select.value));
+  langSwitchers.forEach((switcher) => {
+    const trigger = $('.lang-switcher__trigger', switcher);
+    const options = $$('.lang-switcher__option', switcher);
+    if (!trigger || !options.length) return;
+
+    const focusRelativeOption = (step) => {
+      const currentIndex = options.indexOf(document.activeElement);
+      const activeIndex = options.findIndex((option) => option.classList.contains('is-active'));
+      const start = currentIndex === -1 ? Math.max(activeIndex, 0) : currentIndex;
+      const nextIndex = (start + step + options.length) % options.length;
+      options[nextIndex].focus();
+    };
+
+    const openSwitcher = () => {
+      closeLangSwitchers(switcher);
+      switcher.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      activeLangSwitcher = switcher;
+
+      const current = options.find((option) => option.classList.contains('is-active')) || options[0];
+      if (current) current.focus();
+    };
+
+    trigger.addEventListener('click', () => {
+      if (switcher.classList.contains('is-open')) closeLangSwitcher(switcher);
+      else openSwitcher();
+    });
+
+    trigger.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      if (!switcher.classList.contains('is-open')) openSwitcher();
+      else focusRelativeOption(event.key === 'ArrowDown' ? 1 : -1);
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        setLanguage(option.dataset.lang);
+        closeLangSwitcher(switcher, true);
+      });
+
+      option.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          focusRelativeOption(1);
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          focusRelativeOption(-1);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          options[0].focus();
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          options[options.length - 1].focus();
+        } else if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          option.click();
+        } else if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
+          closeLangSwitcher(switcher, true);
+        } else if (event.key === 'Tab') {
+          closeLangSwitcher(switcher);
+        }
+      });
+    });
+
+    switcher.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      event.stopPropagation();
+      closeLangSwitcher(switcher, true);
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('[data-lang-switcher]')) closeLangSwitchers();
+  });
+
+  document.addEventListener('focusin', (event) => {
+    if (activeLangSwitcher && !activeLangSwitcher.contains(event.target)) {
+      closeLangSwitcher(activeLangSwitcher);
+    }
   });
 
   /* -------------------------------------------------------
@@ -169,6 +284,7 @@
     if (!mobileMenu || !navToggle) return;
 
     lastFocused = document.activeElement;
+    closeLangSwitchers();
     mobileMenu.classList.add('is-open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
