@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title data-i18n="meta.home.title">Mar Alegría · Salón de belleza y spa para mujeres en Cusco</title>
+  <meta name="description" data-i18n-attr="content:meta.home.desc" content="Salón de belleza para mujeres: corte, color, manicura, faciales y masajes en un espacio íntimo y sereno en Cusco. Reserva tu cita por WhatsApp.">
+  <meta property="og:title" content="Mar Alegría · Salón de belleza y spa">
+  <meta property="og:description" content="Corte, color, manicura y rituales de spa en un espacio íntimo para mujeres. Reserva tu cita.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="dns-prefetch" href="https://images.pexels.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image"
+        href="https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+        imagesrcset="https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w"
+        imagesizes="100vw">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('ma-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (e) {}
+      try {
+        var lang = localStorage.getItem('ma-lang');
+        if (!lang) {
+          var nav = (navigator.language || 'es').slice(0, 2).toLowerCase();
+          lang = nav === 'en' ? 'en' : nav === 'pt' ? 'pt' : 'es';
+        }
+        document.documentElement.lang = lang;
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- Sprite de iconos -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.34M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.23-6.17-3.48-8.41Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 9h3V5.5h-3c-2.2 0-4 1.8-4 4V12H7v3.5h3V22h3.5v-6.5h3l.5-3.5h-3.5V9.8c0-.5.4-.8 1-.8Z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.8 4.2 8.4 9 9-4.8.6-8.4 4.2-9 9-.6-4.8-4.2-8.4-9-9 4.8-.6 8.4-4.2 9-9Z"/></symbol>
+    <symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 20c-3.4 0-6.3-2-7.6-4.8 1.9-.3 3.6.2 5 1.4-1-3-.6-5.7 1-8.1.9 1.6 1.5 3.3 1.8 5.2.3-1.9.9-3.6 1.8-5.2 1.6 2.4 2 5.1 1 8.1 1.4-1.2 3.1-1.7 5-1.4C18.3 18 15.4 20 12 20Z"/><path d="M12 20v-3"/></symbol>
+    <symbol id="i-stones" viewBox="0 0 24 24"><ellipse cx="12" cy="17.5" rx="8" ry="3"/><ellipse cx="12" cy="12" rx="5.8" ry="2.4"/><ellipse cx="12.4" cy="7" rx="3.8" ry="1.9"/></symbol>
+    <symbol id="i-waves" viewBox="0 0 24 24"><path d="M3 9c2.3-2 4.6-2 7 0s4.7 2 7 0 4-2 4-2M3 15c2.3-2 4.6-2 7 0s4.7 2 7 0 4-2 4-2"/></symbol>
+    <symbol id="i-face" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 10.5c.5-.6 1.5-.6 2 0M13.5 10.5c.5-.6 1.5-.6 2 0M9 14.8c1.8 1.4 4.2 1.4 6 0"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 12 10 7 19 6c-1 9-6 14-13 14"/><path d="M5 19c3-6 7-9 11-10.5"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12m0-6.5a1.5 1.5 0 0 1 3 0V12m0-5.5a1.5 1.5 0 0 1 3 0V13m0-4.5a1.5 1.5 0 0 1 3 0V16a5 5 0 0 1-5 5h-1.5a5.5 5.5 0 0 1-4.4-2.2L5 13.5a1.7 1.7 0 0 1 2.6-2.1L8 12"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8.2 7.5 20 19M20 5 8.2 16.5"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 3h4v5h-4z"/><path d="M8 10c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v8a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3z"/><path d="M10.5 14h3"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="9" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1.2" fill="currentColor" stroke="none"/><path d="M12 21c-1.4-1.2-.6-3 .6-3.6 1.4-.7 2.9.3 3.4 1.6.6 1.6-.6 2-1.5 2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.4A8.6 8.6 0 0 1 9.6 4 8.6 8.6 0 1 0 20 14.4Z"/></symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Mar Alegría Spa">
+        <img class="brand__logo brand__logo--color" src="assets/img/logo.png" alt="Mar Alegría Spa" width="600" height="209" decoding="async" fetchpriority="high">
+        <img class="brand__logo brand__logo--light" src="assets/img/logo-light.png" alt="" width="600" height="209" decoding="async" fetchpriority="high">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page" data-i18n="nav.home">Inicio</a></li>
+          <li><a class="nav__link" href="nosotros.html" data-i18n="nav.about">Nosotros</a></li>
+          <li><a class="nav__link" href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a class="nav__link" href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+        <div class="header__tools">
+          <label class="lang header__lang">
+            <span class="sr-only" data-i18n="nav.language">Idioma</span>
+            <select class="js-lang" data-i18n-attr="aria-label:nav.language" aria-label="Idioma">
+              <option value="es" lang="es">ES</option>
+              <option value="en" lang="en">EN</option>
+              <option value="pt" lang="pt">PT</option>
+            </select>
+          </label>
+          <a class="btn btn--primary btn--sm nav__cta js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="cta.book">Reserva tu cita</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn js-theme" type="button" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+          <svg class="icon theme-icon theme-icon--moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+          <svg class="icon theme-icon theme-icon--sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+          <span class="nav-toggle__box" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="container mobile-menu__inner">
+      <nav aria-label="Navegación móvil" data-i18n-attr="aria-label:nav.mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html" aria-current="page"><span>01</span><span data-i18n="nav.home">Inicio</span></a></li>
+          <li><a href="nosotros.html"><span>02</span><span data-i18n="nav.about">Nosotros</span></a></li>
+          <li><a href="servicios.html"><span>03</span><span data-i18n="nav.services">Servicios</span></a></li>
+          <li><a href="contacto.html"><span>04</span><span data-i18n="nav.contact">Contacto</span></a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a class="btn btn--light btn--block js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+          <span data-i18n="cta.book">Reserva tu cita</span>
+        </a>
+        <a class="mobile-menu__phone" href="tel:+51942865182">+51 942 865 182</a>
+        <div class="socials socials--light">
+          <a href="https://www.instagram.com/maralegriaspa/" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.instagram" aria-label="Instagram de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+          <a href="https://www.facebook.com/maralegria.spa" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.facebook" aria-label="Facebook de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+          <a href="https://www.tiktok.com/@maralegriaspa" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.tiktok" aria-label="TikTok de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"></use></svg></a>
+          <a class="js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.whatsapp" aria-label="WhatsApp de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
+        </div>
+        <div class="mobile-menu__tools">
+          <label class="lang">
+            <span class="sr-only" data-i18n="nav.language">Idioma</span>
+            <select class="js-lang" data-i18n-attr="aria-label:nav.language" aria-label="Idioma">
+              <option value="es" lang="es">ES</option>
+              <option value="en" lang="en">EN</option>
+              <option value="pt" lang="pt">PT</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__slide is-active">
+          <img src="https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+               srcset="https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/photos/5605024/pexels-photo-5605024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w"
+               sizes="100vw" width="1920" height="1281" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero__slide hero__slide--right">
+          <img src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+               srcset="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w"
+               sizes="100vw" width="1920" height="1280" alt="" loading="lazy" decoding="async">
+        </div>
+        <div class="hero__slide">
+          <img src="https://images.pexels.com/photos/3757657/pexels-photo-3757657.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+               srcset="https://images.pexels.com/photos/3757657/pexels-photo-3757657.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/3757657/pexels-photo-3757657.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/photos/3757657/pexels-photo-3757657.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w"
+               sizes="100vw" width="1920" height="1280" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light" data-i18n="home.eyebrow">Salón de belleza para mujeres · Cusco</p>
+        <h1 class="hero__title" id="heroTitle" data-i18n-html="home.titleHtml">Belleza serena,<br>hecha <em>a tu medida</em></h1>
+        <p class="hero__lead" data-i18n="home.lead">Corte, color y manicura con la calma de un spa. Un espacio íntimo donde te escuchamos antes de empezar y cada detalle está pensado para ti.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="cta.book">Reserva tu cita</span>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="servicios.html">
+            <span data-i18n="cta.services">Ver servicios</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+        <ul class="hero__meta" data-i18n-attr="aria-label:home.metaLabel" aria-label="Nuestros pilares">
+          <li data-i18n="home.meta1">Salón de belleza</li>
+          <li data-i18n="home.meta2">Productos profesionales</li>
+          <li data-i18n="home.meta3">Ambiente privado</li>
+        </ul>
+      </div>
+
+      <div class="hero__footer">
+        <div class="container hero__footer-inner">
+          <div class="hero__dots" role="group" data-i18n-attr="aria-label:hero.dotsLabel" aria-label="Seleccionar imagen de portada">
+            <button class="hero__dot is-active" type="button" data-slide-to="0" aria-current="true" data-i18n-attr="aria-label:hero.slide1" aria-label="Ver imagen 1 de 3"><span></span></button>
+            <button class="hero__dot" type="button" data-slide-to="1" aria-current="false" data-i18n-attr="aria-label:hero.slide2" aria-label="Ver imagen 2 de 3"><span></span></button>
+            <button class="hero__dot" type="button" data-slide-to="2" aria-current="false" data-i18n-attr="aria-label:hero.slide3" aria-label="Ver imagen 3 de 3"><span></span></button>
+          </div>
+          <p class="hero__count" aria-hidden="true"><span id="heroCurrent">01</span><span class="hero__count-sep">/</span>03</p>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#salon" data-i18n="hero.scroll">Desliza</a>
+
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path class="wave__fill" d="M0 52c180 36 360 38 540 12 180-26 360-54 540-38 180 16 260 42 360 32v32H0Z"/></svg>
+      </div>
+    </section>
+
+    <!-- El salón (servicio principal) -->
+    <section class="section salon" id="salon" aria-labelledby="salonTitle">
+      <div class="container salon__grid">
+        <div class="salon__body reveal">
+          <p class="eyebrow" data-i18n="home.salonEyebrow">Nuestro servicio principal</p>
+          <h2 class="section-title" id="salonTitle" data-i18n-html="home.salonTitleHtml">El salón,<br>donde todo <em>empieza</em></h2>
+          <p class="about__lead" data-i18n="home.salonLead">Corte, color y manicura pensados para mujeres que quieren sentirse ellas mismas. Empezamos escuchando: tu textura, tu rutina y lo que quieres proyectar.</p>
+          <p class="salon__note" data-i18n="home.salonNote">Cada cita incluye diagnóstico, bebida de cortesía y una breve guía para cuidar tu resultado en casa.</p>
+          <a class="link-arrow" href="servicios.html#salon">
+            <span data-i18n="home.salonLink">Ver todos los servicios del salón</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+
+        <div class="salon__menu reveal">
+          <div class="menu-list">
+            <article class="menu-item">
+              <h3 data-i18n="svc.corte.name">Corte &amp; styling</h3>
+              <p data-i18n="svc.corte.desc">Diseño de corte y peinado según tu rostro, tu textura y tu estilo personal.</p>
+              <div class="price">
+                <span class="price__label" data-i18n="price.from">Desde</span>
+                <span class="price__value">$ 90.000</span>
+                <span class="price__time">45 min</span>
+              </div>
+            </article>
+            <article class="menu-item">
+              <h3 data-i18n="svc.color.name">Color &amp; mechas</h3>
+              <p data-i18n="svc.color.desc">Coloración personalizada, balayage y corrección de tono con productos de baja agresión.</p>
+              <div class="price">
+                <span class="price__label" data-i18n="price.from">Desde</span>
+                <span class="price__value">$ 210.000</span>
+                <span class="price__time">120 min</span>
+              </div>
+            </article>
+            <article class="menu-item">
+              <h3 data-i18n="svc.manicura.name">Manicura spa</h3>
+              <p data-i18n="svc.manicura.desc">Exfoliación, masaje de manos y esmaltado impecable con acabado duradero.</p>
+              <div class="price">
+                <span class="price__label" data-i18n="price.from">Desde</span>
+                <span class="price__value">$ 70.000</span>
+                <span class="price__time">50 min</span>
+              </div>
+            </article>
+          </div>
+          <a class="btn btn--outline btn--block salon__cta js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="cta.bookShort">Reservar en el salón</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros (resumen) -->
+    <section class="section about section--sand" aria-labelledby="aboutTitle">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <figure class="about__figure about__figure--soft">
+            <img src="https://images.pexels.com/photos/7195805/pexels-photo-7195805.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                 srcset="https://images.pexels.com/photos/7195805/pexels-photo-7195805.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700 700w, https://images.pexels.com/photos/7195805/pexels-photo-7195805.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+                 sizes="(min-width: 900px) 46vw, 90vw" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Interior luminoso del salón Mar Alegría con sillas y espejos">
+          </figure>
+        </div>
+
+        <div class="about__body reveal">
+          <p class="eyebrow" data-i18n="home.aboutEyebrow">Nosotros</p>
+          <h2 class="section-title" id="aboutTitle" data-i18n-html="home.aboutTitleHtml">La calma también<br><em>se cultiva</em></h2>
+          <p class="about__lead" data-i18n="home.aboutLead">Mar Alegría nace de una idea sencilla: la belleza no debería ser un trámite apresurado.</p>
+          <p data-i18n="home.aboutText">Desde 2014 acompañamos a mujeres que quieren verse bien y sentirse mejor. Un equipo de estilistas, manicuristas y terapeutas que combina técnica, sensibilidad y productos de alta gama en un espacio sereno.</p>
+
+          <ul class="features">
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-palette"></use></svg></span>
+              <div>
+                <h3 data-i18n="home.tag1Title">Diagnóstico honesto</h3>
+                <p data-i18n="home.tag1Text">Te decimos qué favorece a tu rostro y tu cabello, sin prometer lo imposible.</p>
+              </div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-hand"></use></svg></span>
+              <div>
+                <h3 data-i18n="home.tag2Title">Manos expertas</h3>
+                <p data-i18n="home.tag2Text">Estilistas y terapeutas certificadas, con formación continua.</p>
+              </div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-leaf"></use></svg></span>
+              <div>
+                <h3 data-i18n="home.tag3Title">Un entorno sereno</h3>
+                <p data-i18n="home.tag3Text">Espacios privados, aromas suaves y una luz que invita a quedarse.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a class="link-arrow" href="nosotros.html">
+            <span data-i18n="home.aboutLink">Conoce nuestra historia</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section" aria-labelledby="ctaTitle">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <p class="eyebrow eyebrow--light eyebrow--center" data-i18n="home.ctaEyebrow">Tu próxima cita</p>
+          <h2 id="ctaTitle" data-i18n-html="home.ctaTitleHtml">Tu belleza,<br>en <em>buenas manos</em></h2>
+          <p data-i18n="home.ctaText">Cuéntanos qué necesitas y te ayudamos a elegir el servicio ideal. Respondemos dentro del horario de atención.</p>
+          <a class="btn btn--light js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="cta.book">Reserva tu cita</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="pre-footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#05122F" d="M0 58c160-30 320 4 480 10s320-12 480-10 300 16 480 2v30H0Z"/></svg>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--footer" href="index.html" aria-label="Mar Alegría Spa">
+          <img class="brand__logo brand__logo--color" src="assets/img/logo.png" alt="Mar Alegría Spa" width="600" height="209" loading="lazy" decoding="async">
+          <img class="brand__logo brand__logo--light" src="assets/img/logo-light.png" alt="" width="600" height="209" loading="lazy" decoding="async">
+        </a>
+        <p data-i18n="footer.tagline">Un refugio urbano para bajar el ritmo, cuidar tu belleza y reencontrarte con tu calma.</p>
+        <div class="socials socials--light">
+          <a href="https://www.instagram.com/maralegriaspa/" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.instagram" aria-label="Instagram de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+          <a href="https://www.facebook.com/maralegria.spa" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.facebook" aria-label="Facebook de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+          <a href="https://www.tiktok.com/@maralegriaspa" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.tiktok" aria-label="TikTok de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"></use></svg></a>
+          <a class="js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.whatsapp" aria-label="WhatsApp de Mar Alegría"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Explorar" data-i18n-attr="aria-label:footer.exploreLabel">
+        <h3 data-i18n="footer.explore">Explorar</h3>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="nosotros.html" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Rituales" data-i18n-attr="aria-label:footer.ritualsLabel">
+        <h3 data-i18n="footer.rituals">Rituales</h3>
+        <ul>
+          <li><a href="servicios.html#salon" data-i18n="cat.salon">Salón de belleza</a></li>
+          <li><a href="servicios.html#faciales" data-i18n="cat.facial">Tratamientos faciales</a></li>
+          <li><a href="servicios.html#masajes" data-i18n="cat.massage">Masajes</a></li>
+          <li><a class="js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener" data-i18n="footer.gifts">Tarjetas de regalo</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__contact">
+        <h3 data-i18n="footer.visit">Visítanos</h3>
+        <p data-i18n-html="footer.addressHtml">Av. El Sol 224, C.C. Club Cusco<br>Int. C-11, Cusco, Perú</p>
+        <p><a href="tel:+51942865182">+51 942 865 182</a><br><a href="mailto:hola@maralegriaspa.com">hola@maralegriaspa.com</a></p>
+        <p data-i18n-html="footer.hoursHtml">Lun – Vie · 9:00 a 20:00<br>Sáb · 9:00 a 18:00</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Mar Alegría. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <ul>
+        <li><a href="#" data-i18n="footer.privacy">Política de privacidad</a></li>
+        <li><a href="#" data-i18n="footer.terms">Términos y condiciones</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="float-actions">
+    <a class="fab js-wa" href="https://wa.me/51942865182" target="_blank" rel="noopener" data-i18n-attr="aria-label:cta.bookWhatsapp" aria-label="Reserva tu cita por WhatsApp">
+      <span class="fab__pulse" aria-hidden="true"></span>
+      <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+      <span class="fab__label" aria-hidden="true" data-i18n="cta.book">Reserva tu cita</span>
+    </a>
+    <button class="to-top" id="toTop" type="button" data-i18n-attr="aria-label:cta.top" aria-label="Volver arriba">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+    </button>
+  </div>
+</body>
+</html>
